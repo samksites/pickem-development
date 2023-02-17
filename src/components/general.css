@@ -1,0 +1,90 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.alighnNextFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.centerSpace{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+}
+
+.centerColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerColumnSpaceB{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.justifyLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.justifyLeftRow{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.justifyRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.justifyRowCenter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.justifyRowSpaceB{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.justifyRowSpaceA{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+
+.curserChange:hover{
+    cursor: pointer;
+}
+
+
+.hover:hover{
+    cursor: pointer;
+}
+
+.alighnTextCenter{
+    text-align: center;
+}
