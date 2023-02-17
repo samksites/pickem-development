@@ -1,15 +1,16 @@
 import {signOut} from 'firebase/auth'
-import {auth} from '../firebase'
+import SignUp from './Signup';
+import {auth} from '../../firebase'
+import React from 'react';
 
 
-const SignOut = () => {
+const SignOut = (props) => {
 
     const sOut = async () => {
         try{
-            const test = await signOut(auth);
-            console.log("yo");
+             await signOut(auth);
+             props.s(<SignUp s={props.s}/>);
         } catch(e){
-            console.log(e);
         }
           }
 

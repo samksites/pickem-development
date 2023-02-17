@@ -1,31 +1,16 @@
-import './homePage.scss'
-import '../../css/general.scss'
-
-const noComp = "No compotion coming up. Check back soon for updates.";
-
-const nextComp = "Next compotion is coming up on";
+import React from 'react';
+import './css/homePage.css'
+import '../general.css'
 
 
-const NextComp = () =>{
+const NextComp = (props) =>{
 
-
-    const temp = [<tr >
-        <td>Alfreds Futterkiste</td> <td>0</td>
-      </tr>];
     return(
-        <div className='flex-center'>
-            <div id='compotion'>
-            <h2>{noComp}</h2>
-
-            <table id='table'>
-            <tr>
-                <th>Username</th>
-                <th>Score</th>
-            </tr>
-            {temp[0]}
-            </table>
-            
-        </div>
+        
+        <div id='nextComp'>
+            <h2 className='nextCompHeader'>{props.title}</h2>
+            <div id='spacer'></div>
+            <h2 className='nextCompHeader'>{props.timeTill}</h2>
         </div>
         
 

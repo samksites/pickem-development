@@ -1,17 +1,30 @@
-import SignUp from './components/Signup.js';
-import NavBar from './components/NavBar.js';
-import SignOut from './components/SignOut.js';
-import NextComp from './components/homepage/NextComp.js'
-function App() {
+import React from 'react';
+import HomePage from './components/homepage/HomePage'
+import PrivateRoutes from './components/customeHooks/PrivateRoute';
+import AdminCompsPage from './components/adminControls/compCreation/AdminCompsPage';
+import AdminNewCompTemplate from './components/adminControls/compCreation/AdminNewCompTemplate';
+import AdminControl from './components/adminControls/AdminContrl';
+import AdminUsers from './components/adminControls/adminUserSettings/AdminUsers';
+import {BrowserRouter, Routes ,Route} from 'react-router-dom'
+
+function App() { 
+
   return (
     <div className="App">
-      <NavBar/>
-      <div id='homeTitle'>
-        <h1>Pickem compotions</h1>
-      </div>
-      <SignUp/>
-      <SignOut/>
-      <NextComp/>
+      <BrowserRouter>
+      
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route element={<PrivateRoutes />}>
+          <Route path='/AdminContrls' element={<AdminControl />} />
+          <Route path='/AdminContrls/AdminComp' exact element={<AdminCompsPage/>}/>
+          <Route path='/AdminComp/NewComp' exact element={<AdminNewCompTemplate />} />
+          <Route path='/AdminContrls/AdminUsers' exact element={<AdminUsers />} />
+        </Route>
+      </Routes>
+
+      </BrowserRouter>
+      
     </div>
   );
 }
