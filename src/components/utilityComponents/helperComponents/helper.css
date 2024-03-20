@@ -1,0 +1,53 @@
+
+
+#scrollBoxBackground{
+    width: 95%;
+    height: 90%;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: aqua;
+    border-width: 2px;
+}
+
+
+.scrollBoxFixedHead {
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 60vh; /* gives an initial height of 200px to the table */
+    width: 100%;
+  }
+  .scrollBoxFixedHead thead th {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  }
+  .scrollBoxFixedHead table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+  }
+  th,
+  .scrollBoxFixedHead td {
+    padding: 8px 16px;
+    border: 2px solid #d0d0d0;
+    width: auto;
+    height: auto;
+  }
+  th {
+    background: #d2d2d2;
+  }
+
+  .scrollRow{
+    background-color: #e5e5e5;
+    width: auto;
+    height: auto;
+  }
+
+  .scrollRow:hover{
+    background-color: #bababa;
+  }
+
+
+
+.restWidthScroll{
+    width: auto;
+}

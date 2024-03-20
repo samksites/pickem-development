@@ -1,0 +1,161 @@
+
+.position{
+    margin-top: 50px;
+    width: 38vw;
+    height: 500px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .position {
+    width: 65vw;;
+  }
+}
+
+.border-gradient {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+  }
+
+  .border-gradient-purple {
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  }
+
+  #insideBackground{
+    background-color: rgb(255, 255, 255);
+    width: 96%;
+    height: 97%;
+    border-radius: 3px;
+  }
+
+  .swim-icon{
+    margin-top: 20px;
+    transform: scale(2.5);
+  }
+
+  .sign-in-label{
+    margin: 15px 0px -5px 0px;
+  }
+
+  
+
+  .error-message-background{
+    height: 60px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    background-color: #f2404055;
+    border: solid;
+    border-color: red;
+    animation-name: horizontal-shaking;
+    animation-duration: .2s;
+  }
+
+  .error-animation{
+
+    animation-name: horizontal-shaking;
+    animation-duration: .2s;
+  }
+
+  .error-animation2{
+
+    animation-name: horizontal-shaking2;
+    animation-duration: .2s;
+  }
+
+
+
+  @keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
+
+   @keyframes horizontal-shaking2 {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
+
+  #warningTop{
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-weight: bold;
+    font-size: medium;
+  }
+  #warningBottom{
+    font-weight: 100;
+  }
+  .warning{
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .input-spacing{
+    margin: 18px 0px 4px 0px;
+    width: 225px;
+    height: 30px;
+    border-radius: 3px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .input-spacing{
+      margin: 18px 0px 4px 0px;
+      width: 90%;
+      height: 20px;
+      border-radius: 3px;
+    }
+  }
+
+
+  .label-look{
+    font-style: bold;
+  }
+
+  .submit-button{
+    margin: 15px 0px -5px 0px;
+    width: 45%;
+    height: 17%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: solid;
+    border-radius: 5px;
+  }
+
+  .submit-button:hover{
+    transform: scale(1.1);
+    background-color: rgb(240, 240, 240);
+  }
+
+
+.google-icon{
+  margin-top: -10px;
+}
+
+  .google-icon:hover{
+    transform: scale(1.3);
+  }
+
+  .create-account{
+    margin-top: 5px;
+    color: rgb(33, 33, 197);
+  }
+
+  .create-account:hover{
+    transform: scale(1.1);
+  }
+
+  .forgot-password{
+    margin-top: -1px;
+    color: rgb(33, 33, 197);
+  }
+
+  .forgot-password:hover{
+    transform: scale(1.1);
+  }

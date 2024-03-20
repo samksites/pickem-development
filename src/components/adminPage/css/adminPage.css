@@ -1,0 +1,56 @@
+.optionsBox{
+    width: 80vw;
+    height: auto;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 255, 255);
+    margin-top: 30px;
+    padding: 0px 15px 0px 15px;
+}
+
+.adminOptions{
+
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.adminOptions:hover{
+    transform: scale(1.03);
+}
+
+#useBackground{
+    width: 80vw;
+    height: 200px;
+}
+
+#userPlacement{
+    margin-top: 40px;
+}
+
+#searchBarPlacement{
+    width: 50%;
+    margin-top: -10px;
+}
+
+#arrowPlacement{
+    
+    margin-right: 60vw;
+    position: relative;
+}
+
+.buttonWidth{
+    width: 200px;
+    height: 100px;
+    margin: 50px 20px 20px 20px;
+}
+
+.createBackground{
+   background-color: white;
+   border-radius: 3px;
+}

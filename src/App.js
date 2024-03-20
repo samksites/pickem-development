@@ -1,11 +1,10 @@
 import React from 'react';
-import HomePage from './components/homepage/HomePage'
-import PrivateRoutes from './components/customeHooks/PrivateRoute';
-import AdminCompsPage from './components/adminControls/compCreation/AdminCompsPage';
-import AdminNewCompTemplate from './components/adminControls/compCreation/AdminNewCompTemplate';
-import AdminControl from './components/adminControls/AdminContrl';
-import AdminUsers from './components/adminControls/adminUserSettings/AdminUsers';
-import {BrowserRouter, Routes ,Route} from 'react-router-dom'
+import HomePage from './components/homepage/HomePage';
+import SignInPage from './components/accountLogin/SignInPage';
+import CompetitionsPage from './components/competitionsPage/CompetitionsPage.js';
+import AdminPage from './components/adminPage/AdminPage';
+import {BrowserRouter, Routes ,Route} from 'react-router-dom';
+
 
 function App() { 
 
@@ -15,12 +14,10 @@ function App() {
       
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route element={<PrivateRoutes />}>
-          <Route path='/AdminContrls' element={<AdminControl />} />
-          <Route path='/AdminContrls/AdminComp' exact element={<AdminCompsPage/>}/>
-          <Route path='/AdminComp/NewComp' exact element={<AdminNewCompTemplate />} />
-          <Route path='/AdminContrls/AdminUsers' exact element={<AdminUsers />} />
-        </Route>
+        <Route path='/SignInPage' element={<SignInPage/>} />
+        <Route path='/competitionsPage' element={<CompetitionsPage page={'competition'} />} />
+        <Route path='/adminPage' exact element={<AdminPage/>}/>
+
       </Routes>
 
       </BrowserRouter>

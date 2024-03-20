@@ -1,13 +1,23 @@
 import React from 'react';
 import '../../general.css'
-import '../css/utilityComponents.css'
 
 
 const GeneralButton = (props) => {
 
+    let classString = '';
+
+    if(props.clickFalse === true){
+        classString = 'generalButtonNoClick';
+
+    } else{
+        classString = 'generalButton hover';
+    }
+
     
 
-return (<div className='gButtons hover' onClick={ props.func}>{props.content}</div>);
+return (
+<div className={classString} onClick={ props.func}>{props.content}</div>
+);
 
 }
 

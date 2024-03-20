@@ -1,0 +1,11 @@
+
+.header{
+    color: rgb(226, 226, 226);
+    border-radius: 7px;
+    height: 50px;
+    text-align: center;
+    border: solid;
+    border-color: rgba(0, 75, 128);
+    border-width: 3px;
+    margin-bottom: -15px;
+}

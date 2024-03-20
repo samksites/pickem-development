@@ -1,43 +1,5 @@
 
 
-.exitButton {
-    width: 18px;
-    height: 18px;
-    position: relative;
-    transition: ease-in-out .3s;
-    margin-top: 5px;
-    
-}
-
-.exitButton::before, .exitButton::after {
-    content: ' ';
-    position: absolute;
-    left: 9px;
-    height: 18px;
-    width: 2px;
-    background-color: rgba(224, 224, 224, 0.857);
-   
-  }
-
-.exitButton::before{
-    transform: rotate(45deg);
-}
-
-.exitButton::after{
-    transform: rotate(-45deg);
-}
-.exitButton:hover::before , .exitButton:hover::after{
-    box-shadow:
-    0 0 .5px .5px rgba(255, 255, 255, 0.484);
-    background-color: rgb(198, 198, 198);
-   
-}
-
-.exitButton:hover{
-    transform: scale(1.25);
-    
-}
-
 
 .gButtons{
     width: fit-content;

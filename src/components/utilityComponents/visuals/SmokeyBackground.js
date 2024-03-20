@@ -1,8 +1,14 @@
-import React from 'react';
-import '../css/utilityComponents.css'
+import React from "react";
 
-const SmokeyBackground = () => <div className="blur"></div>
-
+import './css/visuals.css'
 
 
-export default SmokeyBackground;
+const SmokeyBackground = () => {
+
+
+
+    return(<div id="smokeyBackground"></div> )
+}
+
+
+export default SmokeyBackground

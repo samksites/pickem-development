@@ -1,0 +1,254 @@
+.compsBackground{
+    margin-top: 20px;
+    width: 80vw;
+    height: 600px;
+    background-color: lightgray;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    
+    
+}
+
+.compsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.compCard{
+    width: 200px;
+    height: 120px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.compCard:hover{
+    transform: scale(1.03);
+}
+
+
+.statusBackground{
+    margin-top: -10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgb(63, 241, 63);
+}
+
+.current{
+    background-color: rgb(63, 241, 63);
+}
+
+.past{
+    background-color: rgb(232, 239, 43);
+}
+
+.past{
+    background-color: rgb(235, 241, 63);
+}
+
+.down-button{
+    margin-left: 20px;
+    width: 100px;
+}
+
+.down{
+    transform: rotateZ(180deg);
+}
+.up{
+    transform: rotateZ(-1800deg);
+}
+
+.arrow-box{
+    height: 20px;
+    width: auto;
+}
+
+.down-button p{
+    color: aqua;
+}
+
+.space-date{
+    margin: 0px 15px 0px 15px;
+    margin-bottom: 15px;
+}
+
+.space-distance{
+    margin: 0px 15px 0px 15px;
+    
+    margin-bottom: 15px;
+}
+
+.dateSelector{
+    width: 67px;
+    height: 23px;
+    background-color: white;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.dateSelector p {
+    font-size: 18px;
+}
+
+.left{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-style: solid;
+    border-color: rgb(184, 184, 184);
+    border-width: 2px 2px 2px 2px;
+}
+
+.middle{
+    border-style: solid;
+    border-color: rgb(184, 184, 184);
+    border-width: 2px 2px 2px 0px;
+
+}
+
+.right{
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: solid;
+    border-color: rgb(184, 184, 184);
+    border-width: 2px 2px 2px 0px;
+
+}
+
+
+
+.grow{
+    flex-grow: inherit;
+}
+
+
+
+.dateSelector p {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.dateDropDown  {
+    background-color: white;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    border-bottom: solid rgb(184, 184, 184) 2px;
+    text-align: center;
+    
+}
+
+.dateDropDown:hover{
+    cursor: pointer;
+    background-color: #777;
+}
+
+.arrow{
+    margin-top: -10px;
+}
+
+.search-strip{
+    margin-top: 20px;
+    height: 70px;
+    margin-left: 120px;
+
+}
+
+.search-strip p {
+    margin: 0px 0px 15px 0px;
+    padding: 0px;
+}
+
+.search-strip-bottom{
+    margin-top: 5px;
+    margin-bottom: -10px;
+    animation-name: appear;
+    animation-duration: .8s;
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+.dateSelectionCss{
+    margin-top: 7px;
+    width: 120px;
+}
+
+.inactive{
+    display: none;
+}
+
+.active{
+    background-color: #696969 !important; 
+}
+
+.active p {
+    font-size: 15px;
+}
+
+.clickedCompBackground{
+    position: absolute;
+    width: 90vw;
+    height: auto;
+    min-height: 80vh;
+    background-color: rgb(39, 39, 39);
+    left: 5vw;
+    top: 15vh;
+    border-radius: 10px;
+}
+
+.hideComps{
+    display: none;
+}
+
+#createSpace{
+    margin-top: 20px;
+
+}
+
+#addButton{
+    width: 200px;
+}
+
+.titleSpacing{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.dayBox{
+    margin-left: 30px;
+    border: solid;
+    background-color: #696969;
+    border-color: aqua;
+    height: auto;
+    min-height: 30px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
