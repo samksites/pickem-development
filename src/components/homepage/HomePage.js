@@ -1,80 +1,66 @@
 import React from 'react';
-import CurrentComp from './CurrentComp'
-import NextComp from './NextComp'
-import NavBar from '../utilityComponents/NavBar'
-import SignOut from '../utilityComponents/SignOut'
+import NavBar from '../utilityComponents/displays/NavBar'
+import ErrorDisplay from '../utilityComponents/displays/ErrorDisplay';
 import Loading from '../utilityComponents/visuals/Loading';
-import SignUp from '../utilityComponents/Signup'
-import CompsDisplay from '../adminControls/compCreation/CompsDisplay'
 import {useState, useEffect } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import {auth} from '../../firebase'
+import {onAuthStateChanged } from 'firebase/auth';
+import UpcomingComps from '../utilityComponents/displays/UpcomingComps';
+import CompTable from '../utilityComponents/tables/CompTable';
+import Header from '../utilityComponents/displays/Header';
+import {auth} from '../../firebase';
+import './css/homePage.css';
+import '../general.css'
 
-function HomePage() { 
-    const [logInLogOut, setSign] = useState(null);
+function HomePage() {     
 
-    const [future, setFuture] = useState(null);
+
+    // sets homepage display depending if user is logged in or not
+    const [homePageInfo, setHomePageInfo] = useState(null);
+    const [navBar, setNavBar] = useState(<NavBar user={false}/>);
+    const [liveCompTable, setLiveCompTable] = useState(null);
+    const [futureComps, setFutureComps] = useState(null);
 
     const [loading, setLoading] = useState(true);
 
-    const [current, setCurrent] = useState(null)
-    const [pastComps, setPastComps] = useState(null);
-    
     useEffect(() => {
+      onAuthStateChanged(auth, async (data) => {
+        
+        if(data){
 
-      onAuthStateChanged(auth,(data) => {
-
-        fetchData(data, setSign)
+          fetchData(data.uid,true);
+          var isAdmin = await fetch(`http://localhost:3000/admin/checkAdminStatus?uid=${data.uid}`);
+          isAdmin = await isAdmin.json()    
+          setNavBar(<NavBar admin={isAdmin.admin} page={''} user={true} />)
+        }else{
+          fetchData(null,false)
+          setNavBar(<NavBar admin={false} page={''} user={false}/>)
+        }
+        
     })
       
+    /**
+     * Retrieves home page data
+     * @param {object} user is a object that has the users info
+     * @param {boolean} loggedInState boolean if the user is logged in or not
+     */
+      async function fetchData(user,loggedInState)  {
+        try{
+          
+          const data = await fetch('http://localhost:3000/general/generalInfo?request=1');
+          var comps = await data.json();
+          setLiveCompTable(comps[0].map((comps,index) => <CompTable key={'liveComp' + index} table={comps}/>));
+
+          setFutureComps(comps[1].map((comps,index) => <UpcomingComps key={'upcoming' + index} upComing={comps}/>));
+        } catch(e){
+          setHomePageInfo(<ErrorDisplay function={() => {setHomePageInfo(null)}} errorMessage={'Could not fetch resources pleas reload the page and try again.'} />)
+        }
+        
+        
+
+       // if user null means user is not signed in and ask for user to sign out
       
 
-      async function fetchData(user, setSign)  {
-        if(user !== undefined){
-          setSign(<SignOut s={ setSign}/>);
-        } else {
-          setSign(<SignUp s={setSign}/>);
-        }
-        const config = {
-          method: 'POST',
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({past:true})
-      }
-        const data = await fetch('http://localhost:3000/currentComp',config);
-        var comps = await data.json();
-        if (comps.current[0] === undefined &&  comps.future[0] === undefined){
-
-        setFuture(<NextComp title={"There are no future or current comps at the moment. Pleas take a look back at past comps"} timeTill={"NA"}/>);
-             
-        }
-
-        else if(comps.current[0] === undefined &&  comps.future[0] !== undefined){
-         setFuture(<NextComp title={"There are no future or current comps at the moment. Pleas take a look back at past comps"} timeTill={"NA"}/>);
-         
-
-        }
-
-        else if( comps.future[0] === undefined &&  comps.current[0] !== undefined){
-         
-         
-         setCurrent(<CurrentComp current={comps.current[0].rankings} name ={comps.current[0].name}/>);
-         
-        }
-
-        else if( comps.future[0] !== undefined &&  comps.current[0] !== undefined){
-         setCurrent(<CurrentComp current={comps.current[0].rankings} name ={comps.current[0].name}/>);
-         setFuture(<NextComp title={"There are no future comps planned at the moment."} timeTill={"NA"}/>);
-        }
-       
-       if(comps.past.length > 0){
-         setPastComps(comps.past.map((d,i) => <CompsDisplay key={i} title={d.name} date={d.date}/>));
-         
-         
-       }
-
+       // done loading info for page
        setLoading(false);
      }
      
@@ -86,23 +72,30 @@ function HomePage() {
     } else {
       
     return (
-      <div className="Home">
-        
-        <NavBar title={"Swim swam pickem"}/>
-        <div className='alighnNextFlex'>
-            {future}
-            {current} 
-            <div id='compBox'> 
-              {pastComps}
+      <div className="Home">   
+          {navBar}
+          {homePageInfo}
+          <div className='centerSpace'>
+            <Header top={'50px'} width={'80%'} text={'Live comps'}/>
+            <div className='space_comps'>
+              {liveCompTable}
             </div>
-            {logInLogOut}  
+            <Header top={'50px'} width={'80%'} text={'Upcoming comps'}/>
+            <div className='space_comps'>
+              {futureComps}
+            </div>
+            <Header top={'50px'} width={'80%'} text={'News'}/>
             
-            
-        </div>
+          </div>
+          
+          
         
       </div>
     );
   }
 }
+
+
   
   export default HomePage;
+

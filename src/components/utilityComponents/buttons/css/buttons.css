@@ -1,0 +1,164 @@
+/** General button css **/
+
+.generalButton{
+    padding: 6px 6px 6px 6px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #9175f596;
+    border-style: solid;
+    color: white;
+    text-align: center;
+}
+.generalButtonNoClick{
+    padding: 6px 6px 6px 6px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #c7b7ff84;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    cursor: default;
+
+}
+
+.generalButton:hover{
+    transform: scale(1.05);
+    background-color: #6135fd;
+}
+
+
+/** Submit button css **/
+
+.submitGreyOut{
+    margin: 15px 0px -5px 0px;
+    width: 45%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(170, 170, 170);
+    border: solid;
+    border-color: rgb(170, 170, 170);
+    border-radius: 5px;
+}
+
+
+.submitAllow {
+    margin: 15px 0px -5px 0px;
+    width: 45%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: solid;
+    border-radius: 5px;
+}
+
+.submitAllow:hover{
+    
+    background-color: rgb(240, 240, 240);
+}
+
+
+
+.error-red {
+    animation-name: red-to-black;
+    animation-duration: 4s;
+    margin: 15px 0px -5px 0px;
+    width: 45%;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border: solid;
+    border-radius: 5px;
+}
+
+.error-red:hover{
+    
+    background-color: rgb(240, 240, 240);
+}
+
+
+@keyframes red-to-black {
+    0% { color: red; border-color: red; transform: translateX(0);  }
+    2% { transform: translateX(5px);}
+    4% { transform: translateX(-5px);}
+    6% { transform: translateX(5px); }
+    8% { transform: translateX(0px);   }
+    100% {color: black;  border-color: black; }
+   }
+
+
+   .exitButton {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    transition: ease-in-out .3s;
+    margin-top: 8px;
+    margin-left: 8px;
+    
+}
+
+.exitButton::before, .exitButton::after {
+    content: ' ';
+    position: absolute;
+    left: 9px;
+    height: 18px;
+    width: 2px;
+    background-color: rgba(194, 194, 194, 0.857);
+   
+  }
+
+.exitButton::before{
+    transform: rotate(45deg);
+}
+
+.exitButton::after{
+    transform: rotate(-45deg);
+}
+.exitButton:hover::before , .exitButton:hover::after{
+    box-shadow:
+    0 0 .5px .5px rgba(255, 255, 255, 0.484);
+    background-color: rgb(198, 198, 198);
+   
+}
+
+.exitButton:hover{
+    transform: scale(1.25);
+    
+}
+
+.exitButton:hover{
+    transform: scale(1.25);
+}
+
+  .backArrow {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    right: 47%;
+    margin-top: 3px;
+    margin-left: 8px;
+    color: rgba(194, 194, 194, 0.857);
+}
+
+.backArrow:hover{
+    transform: scale(1.2);
+    color: rgba(147, 147, 147, 0.857);
+}
+
+.searchBarBox{
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+.searchBar {
+    border-radius: 20px;
+    width: 35vw;
+    height: 50px;
+    border: none;
+    margin-left: 10px;
+}
+
+.searchBar:focus{
+    outline: none;
+}
+
+

@@ -2,18 +2,14 @@ import React, { useEffect } from "react"
 import './scss/displays.css'
 import { auth } from "../../../firebase";
 import {useState} from 'react';
-import {CiSettings} from 'react-icons/ci';
 import { onAuthStateChanged } from "firebase/auth";
 import {MdAdminPanelSettings} from'react-icons/md';
-import {CgProfile} from 'react-icons/cg';
-import {AiOutlineHome} from 'react-icons/ai'
 import { useNavigate } from "react-router-dom";
 
 
 
 const Menue = (props) => {
 
-    const [expand, setExpand] = useState(false);
 
     const [admin, setAdmin] = useState(null);
 
@@ -49,18 +45,7 @@ const Menue = (props) => {
 
     return (
     <div className="menu-container">
-        <div className="menu-trigger" onClick={() => setExpand(!expand)}>
-        <img alt="Swimmer Logo" src="https://img.icons8.com/ios-filled/50/null/swimming.png"/>
-        </div>
-        <div className={`drop-down ${expand? 'active' : 'inactive' }`}>
-            
-            <ul>
-                <DropDown dest={"/"} txt={'Home'} img={<AiOutlineHome />} />
-                <DropDown dest={""} txt={'Profie'} img={<CgProfile />} />
-                {admin}
-                <DropDown txt={'Settings'} img={<CiSettings />} />
-            </ul>
-        </div>
+       
     </div>)
 }
 

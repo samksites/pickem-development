@@ -1,0 +1,156 @@
+
+
+.compTable{
+    height: auto;
+    width: 400px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin: 20px 35px 100px 35px;
+    flex-direction: column;
+    border-radius: 7px;
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+.compsCSS{
+    height: auto;
+    width: 65vw;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin: 20px 35px 100px 35px;
+    flex-direction: column;
+    border-radius: 7px;
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+}
+
+
+
+tr{
+    text-align: center;
+}
+
+a{
+    color: rgb(79, 70, 229);
+}
+
+a:hover{
+    color: rgb(33, 27, 154)
+}
+.compTitles{
+    color: aqua;
+    margin-bottom: -2px;
+}
+
+.compTableHeader{
+    width: 100%;
+    display: flex;
+    height: 35px;
+    justify-content: flex-start;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: rgb(249, 250, 251);
+    align-items: center;  
+
+}
+
+.headerLabels{
+    height: 100%;
+    width: 33%;
+    border-style: solid;
+    background-color: aqua;
+}
+
+.compTableRows{
+    width: 100%;
+    display: flex;
+    height: 30px;
+    justify-content: flex-start;
+    
+    border-top-style: solid;
+    border-color: rgb(208, 208, 208);
+    align-items: center;  
+
+}
+
+.tableBorder{
+    border-color: rgb(208, 208, 208);
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.place{
+    display: flex;
+    align-items: flex-start;
+    width: 25%;
+}
+.place span{
+ margin-left: 10px;
+    
+}
+.place span.index{
+    margin-left: 20px;
+}
+
+.username{
+    
+    width: 50%;
+}
+
+.points{
+    width: 25%;
+}
+
+#tableBackground{
+    width: 80vw;
+    height: 500px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: aqua;
+    border-width: 2px;
+}
+
+
+.tableFixHead {
+    overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+    height: 60vh /* gives an initial height of 200px to the table */
+  }
+  .tableFixHead thead th {
+    position: sticky; /* make the table heads sticky */
+    top: 0px; /* table head will be placed from the top of the table and sticks to it */
+  }
+  table {
+    border-collapse: collapse; /* make the table borders collapse to each other */
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 8px 16px;
+    border: 2px solid #d0d0d0;
+  }
+  th {
+    background: #d2d2d2;
+  }
+
+  .tableRow{
+    background-color: #e5e5e5;
+  }
+
+  .tableRow:hover{
+    transform: scaleY(1.15);
+    background-color: #bababa;
+  }
+
+  .userNameWidth{
+    width: 100px;
+  }
+
+.restWidth{
+    width: 25px;
+}

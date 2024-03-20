@@ -1,0 +1,43 @@
+#top-label-create{
+
+    margin-top: 30px;
+}
+
+.create-input-spacing{
+
+    margin: 4px 0px 10px 0px;
+    width: 85%;
+    height: 30px;
+    border-radius: 3px;
+
+}
+
+.label-spacing{
+
+    margin: 10px 0px 5px 0px;
+}
+
+li{
+    font-size: x-small;
+    margin-right: 10px;
+    margin-left: 4px;
+}
+
+.no-input{
+
+    color: rgba(155, 155, 155, 0.675);
+
+}
+
+.need-param{
+    color: rgb(197, 20, 20);
+}
+
+.satisfied{
+
+    color: rgb(18, 184, 6);
+}
+
+.error-txt{
+    color: red;
+}
